@@ -1,0 +1,13 @@
+body{
+  background-color: rgb(30, 30, 30);
+  font-family: Arial;
+}
+
+.cs-start{
+  font-size: 20px;
+  
+}
+.cs-display-time{
+  color: white;
+  font-size: 50px;
+}

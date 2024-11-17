@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Calculator</title>
+  <style>
+    body{
+      font-family: Arial;      
+      background-color: black;
+    }
+    .num-btn{
+      width: 60px; /* Adjust the width and height to desired size */
+      height: 60px;
+      background-color: rgb(43, 43, 43);
+      color: white;
+      padding: 0; /* Remove padding */
+      cursor: pointer;
+      border: none;
+      border-radius: 50%; /* Ensure border-radius is set to 50% for perfect circle */
+      text-align: center;
+      margin: 4px 2px;
+      text-decoration: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px; /* Adjust font size as needed */
+    }
+    .operation-btn{
+      width: 60px; /* Adjust the width and height to desired size */
+      height: 60px;
+      background-color: rgb(254, 160, 10);
+      color: white;
+      padding: 0; /* Remove padding */
+      cursor: pointer;
+      border: none;
+      border-radius: 50%; /* Ensure border-radius is set to 50% for perfect circle */
+      text-align: center;
+      margin: 4px 2px;
+      text-decoration: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px; /* Adjust font size as needed */
+    }
+    .display-cs{
+      color: white;
+      font-size: 45px;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Code changes are at the bottom. -->
+  <p class="js-input-display display-cs">0</p>
+  <p>
+    <button onclick="
+        updateCalculation('1');
+      " class="num-btn">1</button>
+
+    <button onclick="
+        updateCalculation('2');
+      " class="num-btn">2</button>
+
+    <button onclick="
+        updateCalculation('3');
+      " class="num-btn">3</button>
+
+    <button onclick="
+        updateCalculation(' + ');
+      " class="operation-btn">+</button>
+  </p>
+
+  <p>
+    <button onclick="
+        updateCalculation('4');
+      " class="num-btn">4</button>
+
+    <button onclick="
+        updateCalculation('5');
+      " class="num-btn">5</button>
+
+    <button onclick="
+        updateCalculation('6');" class="num-btn">6</button>
+
+    <button onclick="
+        updateCalculation(' - ');
+      " class="operation-btn">-</button>
+  </p>
+
+  <p>
+    <button onclick="
+        updateCalculation('7');
+      " class="num-btn">7</button>
+
+    <button onclick="
+        updateCalculation('8');
+      " class="num-btn">8</button>
+
+    <button onclick="
+        updateCalculation('9');
+      " class="num-btn">9</button>
+
+    <button onclick="
+        updateCalculation(' * ');
+      " class="operation-btn">*</button>
+  </p>
+
+  <p>
+    <button onclick="
+        updateCalculation('0');
+      " class="num-btn">0</button>
+
+    <button onclick="
+        updateCalculation('.');
+      " class="num-btn">.</button>
+
+    <button onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculateTotal();
+      " class="num-btn">=</button>
+
+    <button onclick="
+        updateCalculation(' / ');
+      " class="operation-btn">/</button>
+  </p>
+
+  <p>
+    <button onclick="clearInput();
+      " class="num-btn">Clear</button>
+  </p>
+
+  <script>
+    let calculation = localStorage.getItem('calculation') || '';
+
+    function calculateTotal(){
+      calculation = eval(calculation);
+      console.log(calculation);
+      localStorage.setItem('calculation', calculation);
+      document.querySelector('.js-input-display')
+        .innerHTML = `${calculation}`;         
+    }
+
+    function clearInput(){
+      calculation = '';
+      console.log(calculation);
+      localStorage.setItem('calculation', calculation);
+      document.querySelector('.js-input-display')
+        .innerHTML = `${calculation}`;       
+    }
+
+    function updateCalculation(value) {
+      calculation += value;
+      console.log(calculation);
+      document.querySelector('.js-input-display')
+        .innerHTML = `${calculation}`;      
+      localStorage.setItem('calculation', calculation);
+    }
+    // Optional: you can also create a function in order
+    // to reuse this code.
+    function saveCalculation() {
+      localStorage.setItem('calculation', calculation);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stop Watch</title>
+    <style>
+      .stopwatch {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .display {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="stopwatch">
+      <div class="display">00:00:00:000</div>
+      <button class="start-btn">Start</button>
+      <button class="stop-btn">Stop</button>
+      <button class="reset-btn">Reset</button>
+    </div>
+
+
+    <script>
+ let timer; // Timer variable
+  let milliseconds = 0;
+  let seconds = 0;
+  let minutes = 0;
+  let hours = 0;
+  let isRunning = false;
+
+  const display = document.querySelector('.display');
+  const startBtn = document.querySelector('.start-btn');
+  const stopBtn = document.querySelector('.stop-btn');
+  const resetBtn = document.querySelector('.reset-btn');
+
+  function startTimer() {
+    if (!isRunning) {
+      isRunning = true;
+      timer = setInterval(updateTimer, 10);
+    }
+  }
+
+  function stopTimer() {
+    if (isRunning) {
+      isRunning = false;
+      clearInterval(timer);
+    }
+  }
+
+  function resetTimer() {
+    stopTimer();
+    milliseconds = 0;
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    updateDisplay();
+  }
+
+  function updateTimer() {
+    milliseconds++;
+    if (milliseconds === 100) {
+      milliseconds = 0;
+      seconds++;
+      if (seconds === 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes === 60) {
+          minutes = 0;
+          hours++;
+        }
+      }
+    }
+    updateDisplay();
+  }
+
+  function updateDisplay() {
+    const formattedTime = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}:${pad(milliseconds, 3)}`;
+    display.textContent = formattedTime;
+  }
+
+  function pad(num, size = 2) {
+    let padded = num.toString();
+    while (padded.length < size) {
+      padded = '0' + padded;
+    }
+    return padded;
+  }
+
+  startBtn.addEventListener('click', startTimer);
+  stopBtn.addEventListener('click', stopTimer);
+  resetBtn.addEventListener('click', resetTimer);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div style="background-color: purple;
+        display: flex;
+        height: 50px;
+        align-items: center;
+        ">
+      <div style="
+      color: white;
+      font-family: Arial;
+      width: 100px;
+      margin-left: 20px
+      ">Home</div>
+      <div style="
+      flex: 1;
+      "><input style="border: 0px;
+        border-radius: 50px;
+        padding-right: 600px;
+        padding-left: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      " type="text" placeholder="search"></div>
+      <div style="margin-right: 15px;"><button style="
+      background-color: purple;
+      color: white;
+      border-color: white;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 4px;
+      ">Download</button></div>
+    </div>
+    <div style="
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: 1fr;
+    border: 1px;
+    border-color: rgb(128, 128, 128);
+    border-style: solid;
+    border-radius: 8px;
+    /* box-shadow: 6px 6px 5px rgb(93, 93, 93); */
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 300px;
+    font-family: Arial;
+    ">
+      <div style="display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      ">
+        <p style="margin-top: 0px;
+        margin-bottom: 0px;
+        ">Home</p>
+        <button style="
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding-left: 12px;
+        padding-right: 15px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        margin-right: 10px;
+        ">14</button>
+      </div>
+      <div style="display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      ">
+        Notifications
+        <button style="
+          background-color: blue;
+          color: white;
+          border: none;
+          border-radius: 12px;
+          padding-left: 12px;
+          padding-right: 15px;
+          margin-left: 20px;
+          padding-top: 2px;
+          padding-bottom: 2px;
+          margin-right: 10px
+          ">3</button>
+      </div>
+      <div style="display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      ">
+        Messages
+        <button style="
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding-left: 12px;
+        padding-right: 15px;
+        margin-left: 20px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        margin-right: 10px
+        ">5</button>
+      </div>
+    </div>
+
+
+    <style>
+      .thumbnail{
+        border-radius: 55px;
+        margin-right: 15px;
+
+      }
+      .friend-div{
+        display: flex;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-family: Arial;
+        align-items: center;
+      }
+      p{
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+      .profile-name{
+        font-weight: bold;
+      }
+      .profile-desc{
+        color: grey;
+      }
+      .profile-other{
+        color: grey;
+        font-size: smaller;
+      }
+      .follow-btn{
+        border: none;
+        background-color: rgb(114, 114, 250);
+        color: white;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 8px;
+      }
+      .profile-details{
+        /* display: flex;
+        flex-direction: row;
+        align-items: center; */
+        width: 200px;
+      }
+    </style>
+
+      <div class="friend-div">
+        <img class="thumbnail" src="profilepic/channel-1.jpeg" >
+        <div class="profile-details">
+          <p class="profile-name">
+            Oliver
+          </p>
+          <p class="profile-desc">
+            the cat
+          </p>
+          <p class="profile-other">
+            popular
+          </p>
+        </div>
+        <div>
+          <button class="follow-btn">Follow</button>
+        </div>
+      </div>
+      <div class="friend-div">
+        <img class="thumbnail" src="profilepic/channel-2.jpeg">
+        <div class="profile-details">
+          <p class="profile-name">
+            Oliver
+          </p>
+          <p class="profile-desc">
+            the cat
+          </p>
+          <p class="profile-other">
+            popular
+          </p>
+        </div>
+        <div>
+          <button class="follow-btn">Follow</button>
+        </div>
+      </div>
+      <div class="friend-div">
+        <img class="thumbnail" src="profilepic/channel-3.jpeg">
+        <div class="profile-details">
+          <p class="profile-name">
+            Oliver
+          </p>
+          <p class="profile-desc">
+            the cat
+          </p>
+          <p class="profile-other">
+            popular
+          </p>
+        </div>
+        <div>
+          <button class="follow-btn">Follow</button>
+        </div>
+      </div>
+
+      <style>
+        .header{
+          display: flex;
+          background-color: lightpink;
+          font-family: Arial;
+          height: 50px;
+          align-items: center;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .home-link{
+          margin-left: 20px;
+        }
+        .text-box{
+          border-radius: 55px;
+          border: 1px;
+          padding-left: 10px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          width: 400px;
+        }
+        button{
+          border-color: white;
+          border-width: 1px;
+          background-color: lightpink;
+          color: white;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 2px;    
+          margin-right: 10px;   
+          border-style: solid;
+          cursor: pointer;
+        }
+      </style>
+
+      <div class="header">
+        <div class="home-link">Home</div>
+        <input class="text-box" placeholder="Search">
+        <button>Download</button>
+      </div>
+  </body>

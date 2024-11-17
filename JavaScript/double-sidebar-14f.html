@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+  <head>
+    <title>Discord Sidebar</title>
+    <style>
+      body{
+        height: 3000px;
+        font-family: Arial;
+      }
+      .sidebar{
+        display: flex;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+      }
+      .profile-sidebar{
+        background-color: rgb(41, 40, 40);
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px; 
+      }
+      .thumbnail{
+        border-radius: 50px;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .channel-sidebar{
+        background-color: rgb(61, 59, 59);
+        color: white;
+        width: 300px;
+      }
+      .info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .channel-name{
+        margin-left: 20px;
+
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="sidebar">
+
+      <div class="profile-sidebar">
+        <img class="thumbnail" src="profilepic/channel-1.jpeg">
+        <img class="thumbnail" src="profilepic/channel-2.jpeg">
+        <img class="thumbnail" src="profilepic/channel-3.jpeg">
+      </div>
+
+      <div class="channel-sidebar">
+
+        <div class="info">
+          <p style="margin-left: 20px;">INFO</p>
+          <p style="
+          margin-right: 20px;
+          font-size: 25px;
+          color: rgb(189, 189, 189);
+          ">+</p>
+        </div>
+         
+        <div class="channel-name">
+          <p>#  new-videos</p>
+          <p>#  updates</p>
+          <p>#  faq</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</head>

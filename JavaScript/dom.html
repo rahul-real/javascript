@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      DOM
+    </title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <button>hello</button>
+    <button class="js-bt2">world</button>
+    <script>
+      console.log(document.title);
+      document.title = 'changed';
+      
+      console.log(document.body);
+      
+      console.log(document.body.innerHTML);
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button')
+        .innerHTML = 'jj';
+      const btnElement = document.querySelector('.js-bt2');
+      console.log(btnElement);
+      // document.body.innerHTML ="yoo";
+      // document.title = "yo";
+    </script>
+  </body>
+</html>

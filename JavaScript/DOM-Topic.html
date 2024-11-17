@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+    <style>
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .subscribe-btn{
+        border: none;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+      .is-subscribed{
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+      .cost-input{
+        font-size: 15px;
+        padding: 10px;
+      }
+      .cal-btn{
+        padding: 12px 15px;
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .error{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button class="js-sub-btn subscribe-btn" onclick="subscribe();">Subscribe</button>
+    <p>Rock Paper Scissors</p>
+    <a href="rock-paper-n-scissors.html">Click here</a>
+    <p>Amazon Shipping Calculator</p>
+    <input class="js-cost-input cost-input" placeholder="Cost of order" onkeydown="handleCostKeyDown(event.key);">
+    <button class = "cal-btn" onclick="
+      calculateTotal();
+    ">Calculate</button>
+    <p class="js-total-cost"></p>
+
+    <script>
+      function handleCostKeyDown(event){
+        if (event == 'Enter') {
+          calculateTotal();
+        }
+      }
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value);
+        if (cost> 0 && cost < 40){
+          cost = cost + 10;
+          document.querySelector('.js-total-cost')
+            .innerHTML = `$${cost}`;
+        }else if(cost <=0){
+          document.querySelector('.js-total-cost')
+            .innerHTML = `Error: cost cannot be less than $${0}`;
+          document.querySelector('.js-total-cost').classList.add('error');
+        }else{
+          document.querySelector('.js-total-cost')
+            .innerHTML = `$${cost}`;          
+        }
+
+      }
+      function subscribe(){
+        const btnElement = document.querySelector('.js-sub-btn');
+        if (btnElement.innerText === 'Subscribe') {
+          btnElement.innerText = 'Subscribed';
+          btnElement.classList.add('is-subscribed');
+        } else {
+          btnElement.innerText = 'Subscribe';
+          btnElement.classList.remove('is-subscribed');
+        }
+      }
+      
+    </script>
+  </body>
+</html>

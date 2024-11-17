@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style>
+      .div{
+        background-color: black;
+        color: white;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      }
+      .sidebar{
+        position: fixed;
+        background-color: green;
+        color: white;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        width: 100px;
+      }
+      .element{
+        display: flex;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        align-items: center;
+        justify-content: center;
+      }
+      .Modal{
+        background-color: white;
+        height: 120px;
+        width: 300px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        padding-top: 10px;
+        border: 1px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body style="height: 3000px;">
+    <div class="sidebar">
+      right sidebar
+    </div>
+    <div class="element">
+      <div class="Modal">
+        <p>Modal title</p>
+        <p>This is modal</p>
+        <button>Close</button>
+      </div>
+    </div>
+  </body>
+</html>

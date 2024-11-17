@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects Student</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <script>
+      const student = {
+        name: 'Rahul',
+        age: 24,
+        fun: function studentfn(){
+          console.log("Inside Student JavaScript Object");
+        }
+      };
+      console.log(student);
+      console.log(student.name);
+      console.log(student.age);
+      console.log(student.fun);
+      student.fun();
+      student.name = "Walter white";
+      console.log(student.name);
+      let dupStudent ={
+        school: "",
+        ...student,
+      };
+      dupStudent.school = "BBHS";
+      console.log(dupStudent);
+      console.log("I am the danger -"+`${dupStudent.name}`);
+      console.log(JSON.stringify(dupStudent));
+      console.log(JSON.parse(JSON.stringify(dupStudent)));
+      const studentJson = JSON.stringify(student);
+      console.log(JSON.parse(studentJson));
+      console.log('hello'.length);
+      console.log('WORLD'.toLowerCase());
+      const obj = {
+        message: 'hello,world',
+        price: 68,
+      };
+      const obj2 = obj;
+      console.log(obj,obj2);
+      const arr = [1,2,3,4,5];
+      const arr2 = [1,2,3];
+      console.log(arr2);
+      //const message= obj.message;
+      const { message,price } = obj;//destrcutring 
+      console.log(message,price);
+      console.log(obj);
+      const obj3 = {
+        message,
+        // method: function function1(){
+        //   console.log("method");
+        // }
+        method() {
+          console.log('method');
+        }
+      };
+      console.log(obj3);
+      obj3.method();
+    </script>
+  </body>
+</html>

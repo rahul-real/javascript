@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .signup-name, .signup-email{
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(200, 200, 200);
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 16px;
+        padding-right: 16px;
+        font-size: 16px;
+        border-radius: 8px;
+        margin-bottom: 12px
+      }
+      .signup-email{
+        display: block;
+        width: 300px;
+      }
+      .signup-btn{
+        background-color: rgb(47, 127, 231);
+        color: white;
+        border: none;
+        width: 300px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 8px;
+      }
+      body{
+        font-family: Arial;
+      }
+      .req-txt{
+        font-family: Arial;
+        font-size: 32px;
+        color: black;
+        font-weight: bold;
+      }
+      .location-text, .location-text2{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: rgb(235, 233, 233);
+        border-width: 0px;
+        display: block;
+        padding-left: 10px;
+        margin-bottom: 10px;
+      }
+      .request-btn{
+        background-color: black;
+        color: white;
+        font-size: 12px;
+        font-family: Arial;
+        border: none;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-right: 10px;
+        margin-top: 25px;
+      }
+      .schedule-btn{
+        background-color: rgb(235, 233, 233);
+        color: black;
+        font-size: 12px;
+        font-family: Arial;
+        border: none;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;        
+      }
+    </style>
+  </head>
+  <body>
+    <input class="signup-name" type="text" placeholder="First Name">
+    <input class="signup-name" type="text" placeholder="First Name">
+    <input class="signup-email" type="text" placeholder="Email">
+    <button class="signup-btn">Sign Up</button>
+    <div>
+      <p class="req-txt">Request A Ride Now</p>
+      <input type="text" placeholder="Enter pickup location" class="location-text">
+      <input type="text" class="location-text2" placeholder="Enter Destination">
+      <button class="request-btn">Request now</button>
+      <button class="schedule-btn">Schedule for later</button>
+    </div>
+  </body>
+</html>

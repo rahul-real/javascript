@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Calculator
+    </title>
+    <style>
+      .Numbers{
+        shape-rendering: crispEdges;
+        stroke: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="Numbers" onclick="console.log(`${calculation += '0' }`)">0</button>
+    <button class="Numbers" onclick="console.log(`${calculation += '1'}`)">1</button>
+    <button class="Numbers" onclick="console.log(`${calculation += '2'}`)">2</button>
+    <button class="Numbers" onclick="console.log(`${calculation += '3'}`)">3</button>
+    <button class="Numbers" onclick="console.log(`${calculation += '4'}`)">4</button>
+    <button class="Numbers" onclick="console.log(`${calculation += '5'}`)">5</button>
+    <button class="Numbers" onclick="console.log(`${calculation += '6'}`)">6</button>
+    <button class="Numbers" onclick="console.log(`${calculation += '7'}`)">7</button>
+    <button class="Numbers" onclick="console.log(`${calculation += '8'}`)">8</button>
+    <button class="Numbers" onclick="console.log(`${calculation += '9'}`)">9</button>
+    <button onclick="console.log(`${calculation += ' + '}`)">+</button>
+    <button onclick="console.log(`${calculation += ' - '}`)">-</button>
+    <button onclick="console.log(`${calculation += ' * '}`)">*</button>
+    <button onclick="console.log(`${calculation += ' / '}`)">/</button>
+    <button onclick="console.log(`${eval(calculation)}`)">=</button>
+    <button class="Numbers" onclick="console.log(`${calculation =''}`)">Clear</button>
+    <textarea name="" id="" cols="30" rows="10">`${calculation}`</textarea>
+    <script>
+      let calculation ="";
+    </script>
+  </body>
+</html>

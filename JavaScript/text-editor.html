@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text Editor</title>
+    <link rel="stylesheet" href="styles/text-editor.css">
+  </head>
+  <body>
+    <div class="container">
+      <textarea id="editor" rows="20" cols="80"></textarea>
+      <div class="buttons">
+        <button onclick="saveFile()">Save</button>
+        <input type="file" id="fileInput" onchange="loadFile(event)">
+      </div>
+    </div>
+    <script src="scripts/text-editor.js"></script>
+  </body>
+</html>

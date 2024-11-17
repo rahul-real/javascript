@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <script>
+      let arr = [1,2,3];
+      let b = 0;
+      let a = arr.length;
+      iterateThroughArray(a,arr,b);
+      function iterateThroughArray(a,arr,b){
+        if(b<a){
+          console.log(`${arr[b]}`);
+          iterateThroughArray(a, arr, b + 1);
+        }
+      }
+    </script>
+  </body>
+</html>

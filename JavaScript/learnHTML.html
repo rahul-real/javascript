@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      HTML CSS JavaScript
+    </title>
+    <!-- to use CSS in HTML we use style tag. -->
+    <style>
+      /* styling the HTML */
+      .Submit,
+      .clear {
+        background-color: rgb(108, 108, 224);
+      }
+
+      .clear {
+        color: rgb(8, 0, 4);
+      }
+      .cart{
+        background-color: yellow;
+      }
+      .buy{
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Hello World
+    </h1>
+    <p>
+      Adults Plain Cotton T-shirt
+    </p>
+    <p>
+      Price: $7.99
+    </p>
+    <button class="cart" onclick="alert('Added')">
+      Add to cart
+    </button>
+    <button class="buy" onclick="alert('Loading...');
+      alert('Purchased');">
+      Buy now
+    </button>
+
+    <button class="Submit" onclick="alert('Submitted')">
+      Submit
+    </button>
+    <button class="clear">
+      Clear
+    </button>
+    <p>My name is ${name}</p>
+    <!-- JavaScript code starts here we can use javaScript in html with Script Tag. -->
+    <script>
+      //runs when the page is loaded
+      let name = "Rahul";
+      console.log(`My name is ${name}`)
+    </script>
+  </body>
+</html>
+

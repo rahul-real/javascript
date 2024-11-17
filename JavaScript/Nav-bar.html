@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Navigation Bar</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-div{
+        background-color: rgba(0, 0, 0, 0.936);
+        /* width: 718.400; 
+        height: 56px; */
+        padding-left: 16px;
+        padding-right: 16px;
+        border-bottom-color: rgb(0, 0, 0);
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      li {
+        float: left;
+      }   
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s , color 0.3s;
+      }
+      li a:hover {
+        background-color: white;
+        color: black;
+      }              
+      .nav-btn{
+        background-color: rgba(200, 0, 0);
+        color: white;
+        /* font-size: 15px; */
+        /* font-family: Arial; */
+        /* padding: 10px; */
+        border-radius: 2px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 16px;
+        padding-right: 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <nav class="nav-div">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#" id="about-link">About US</a></li>
+        <li><a href="#">Search</a></li>
+      </ul>
+    </nav>
+    <p id="about-content">YO</p>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add event listener to the "About" link
+        const aboutLink = document.getElementById("about-link");
+
+        aboutLink.addEventListener("click", async function (event) {
+          event.preventDefault();
+
+          try {
+            const response = await fetch('http://localhost:8081/rahul/about');
+
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+
+            // Handle the data appropriately and display it in about-content
+            document.getElementById("about-content").innerHTML =
+              '<p>About content from API: ' + data + '</p>'; // Example
+
+          } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+            // Handle the error and provide feedback to the user
+          }
+        });
+      });
+    </script>    
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "path": "../learn-rust"
+    },
+    {
+      "path": "."
+    },
+    {
+      "path": "../C C++"
+    },
+    {
+      "path": "../learn-type-script"
+    },
+    {
+      "path": "../../angular-dashboard"
+    },
+    {
+      "path": "../../JavaScript/javascript-amazon-project"
+    },
+    {
+      "path": "../../AI applications"
+    },
+    {
+      "path": "../Tic-Tac-Toe"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "learn-type-script"
+  }
+}

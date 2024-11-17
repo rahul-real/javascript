@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .cart{
+        font-family: Arial;
+        background-color: rgb(255, 216, 20);
+        border-radius: 50px;
+        color: black;
+        border: none;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        cursor: pointer;
+      }
+      .now{
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        padding: 8px 15px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .later{
+        background-color: rgb(230, 230, 230);
+        color: black;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 15px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .gaming, .music, .tech{
+        background-color: black;
+        color: white;
+        padding: 8px 15px;
+        cursor: pointer;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+      }
+      .is-toggled{
+        background-color: rgb(230, 230, 230);
+        color: black;
+
+      }
+    </style>
+  </head>
+  <body>
+    <button class="cart">Add to Cart</button>
+    <p>
+      <button class="now">Request now</button>
+      <button class="later">Schedule for later</button>
+    </p>
+    <p>
+      <button onclick="changeColor('.gaming');" class="gaming">Gaming</button>
+      <button onclick="changeColor('.music');" class="music">Music</button>
+      <button onclick="changeColor('.tech');" class="tech">Tech</button>
+    </p>
+  </body>
+  <script>
+    function changeColor(className) {
+      const isToggledPresent = document.querySelector(className);
+      //console.log(isToggledPresent.classList.contains('is-toggled'));
+      if(isToggledPresent.classList.contains('is-toggled')){
+        document.querySelector(className).classList.remove('is-toggled');
+      }else{
+        document.querySelector(className).classList.add('is-toggled');      
+      }
+      
+    }
+    
+  </script>
+</html>

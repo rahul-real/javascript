@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Cart Quantity
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <p>
+      Cart Quantity
+    </p>
+    <button onclick="console.log(`Cart quantity ${a}`);">
+      Show Quantity
+    </button>
+    <button onclick="if(10 < a + 1){
+      alert('Cart is Full');
+    }else{
+      console.log(`Cart quantity ${++a}`);
+    } ">
+      Add to cart
+    </button>
+    <button onclick="if(10 == a + 1){
+      alert('Cart is Full');
+    }else{
+      console.log(`Cart quantity ${a += 2}`);
+    } ">
+      +2
+    </button>
+    <button onclick="if(10 == a + 1){
+      alert('Cart is Full');
+    }else{
+      console.log(`Cart quantity ${a += 3}`);
+    } ">
+      +3
+    </button>
+    <button onclick="console.log(`Cart was rest ${a = 0}`);">
+      Reset Cart
+    </button>
+    <script>
+      let a = 0;
+    </script>
+  </body>
+</html>

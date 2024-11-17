@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+  <title>
+    Clock
+  </title>
+  <style>
+    .clock {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      border: 10px solid #000;
+      border-radius: 50%;
+    }
+
+    .hand {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: bottom center;
+    }
+
+    .hand-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hour-hand {
+      width: 6px;
+      height: 50px;
+      background-color: #000;
+    }
+
+    .minute-hand {
+      width: 4px;
+      height: 70px;
+      background-color: #000;
+    }
+
+    .second-hand {
+      width: 2px;
+      height: 90px;
+      background-color: #ff0000;
+    }
+
+  </style>
+  <body>
+    <div class="clock">
+      <div class="hand hour-hand">
+        <span class="hand-number">12</span>
+      </div>
+      <div class="hand minute-hand">
+        <span class="hand-number">00</span>
+      </div>
+      <div class="hand second-hand">
+        <span class="hand-number">00</span>
+      </div>
+    </div>
+
+    <script>
+    function updateClock() {
+        const now = new Date();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        const hourHand = document.querySelector('.hour-hand');
+        const minuteHand = document.querySelector('.minute-hand');
+        const secondHand = document.querySelector('.second-hand');
+
+        const hourNumber = document.querySelector('.hour-hand .hand-number');
+        const minuteNumber = document.querySelector('.minute-hand .hand-number');
+        const secondNumber = document.querySelector('.second-hand .hand-number');
+
+        const hourDeg = hours * 30 + minutes * 0.5;
+        const minuteDeg = minutes * 6 + seconds * 0.1;
+        const secondDeg = seconds * 6;
+
+        hourHand.style.transform = `translate(-50%, -100%) rotate(${hourDeg}deg)`;
+        minuteHand.style.transform = `translate(-50%, -100%) rotate(${minuteDeg}deg)`;
+        secondHand.style.transform = `translate(-50%, -100%) rotate(${secondDeg}deg)`;
+
+        hourNumber.textContent = pad(hours);
+        minuteNumber.textContent = pad(minutes);
+        secondNumber.textContent = pad(seconds);
+      }
+
+      function pad(num) {
+        return num < 10 ? '0' + num : num;
+      }
+
+      updateClock();
+      setInterval(updateClock, 1000); 
+
+    </script>
+  </body>
+</head>

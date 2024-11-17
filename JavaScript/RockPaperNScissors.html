@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Rock Paper N Scissors
+    </title>
+  </head>
+  <body>
+    <p>Rock Paper N Scissors</p>
+    <button onclick="playgame(1);" value="1" id="1">Rock</button>
+    <button onclick="playgame(2);"value="2" id="1">Paper</button>
+    <button  onclick="playgame(3);"value="3" id="1">Scissors</button>
+    <button onclick="console.log(scoreCard);Object.keys(scoreCard).forEach(key => scoreCard[key] = 0);
+    console.log(scoreCard);
+    localStorage.removeItem('scoreCard')">
+      Reset Score
+    </button>
+    <script>
+      // const scoreCard = {
+      //   win: 0,
+      //   losses: 0,
+      //   ties: 0,
+      // }
+      console.log(localStorage.getItem('message'));
+      console.log(localStorage.getItem('scoreCard'));
+      let scoreCard = JSON.parse(localStorage.getItem('scoreCard')) || {
+        win: 0,
+        losses: 0,
+        ties: 0,
+      };
+      // if(!scoreCard){
+      //   scoreCard = {
+      //     win: 0,
+      //     losses: 0,
+      //     ties: 0,
+      //   };
+      // }
+      console.log(scoreCard);
+      function playgame(userMove){
+        pickComputerMove();
+        if(userMove==1){
+          if (1 == computerMove) {
+            ++scoreCard.ties;
+            alert('Draw. Computer picked Rock\n Wins:' + scoreCard.win + ' Losses:' + scoreCard.losses + 'Ties:' + scoreCard.ties);
+          } else if (computerMove == 2) {
+            ++scoreCard.losses;
+            alert('Computer Wins.Computer picked Paper\n Wins:' + scoreCard.win + ' Losses:' + scoreCard.losses + 'Ties:' + scoreCard.ties);
+          } else if (computerMove == 3) {
+            ++scoreCard.win;
+            alert('User Wins Computer lost, Computer picked Scissors\n Wins:' + scoreCard.win + ' Losses:' + scoreCard.losses + ' Ties:' + scoreCard.ties);
+          }
+        } else if(userMove==2){
+          if (1 == computerMove) {
+            ++scoreCard.win;
+            alert('User Wins Computer lost, Computer picked Rock\n Wins:' + scoreCard.win + ' Losses:' + scoreCard.losses + ' Ties:' + scoreCard.ties);
+          } else if (computerMove == 2) {
+            ++scoreCard.ties;
+            alert('Draw.Computer picked Paper\n Wins:' + scoreCard.win + ' Losses:' + scoreCard.losses + ' Ties:' + scoreCard.ties);
+          } else if (computerMove == 3) {
+            ++scoreCard.losses;
+            alert('Computer Wins.Computer picked Scissors\n Wins:' + scoreCard.win + ' Losses:' + scoreCard.losses + ' Ties:' + scoreCard.ties);
+          }
+        } else if(userMove == 3){
+          if (1 == computerMove) {
+            ++scoreCard.losses;
+            alert('Computer Wins.Computer picked Rock\n Wins:' + scoreCard.win + ' Losses:' + scoreCard.losses + ' Ties:' + scoreCard.ties);
+          } else if (computerMove == 2) {
+            ++scoreCard.win;
+            alert('User Wins Computer lost, Computer picked Paper\n Wins:' + scoreCard.win + ' Losses:' + scoreCard.losses + ' Ties:' + scoreCard.ties);
+          } else if (computerMove == 3) {
+            ++scoreCard.ties;
+            alert('Draw.Computer picked Scissors\n Wins:' + scoreCard.win + ' Losses:' + scoreCard.losses + ' Ties:' + scoreCard.ties)
+          }
+        }
+        localStorage.setItem('message','hello');
+        const score = JSON.stringify(scoreCard);
+        localStorage.setItem('scoreCard',score);
+      }
+      function pickComputerMove(){
+        computerMove = Math.floor(Math.random() * 3) + 1;
+        console.log(`${computerMove}`);
+      }
+    </script>
+  </body>
+</html>
